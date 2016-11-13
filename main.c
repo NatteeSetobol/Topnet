@@ -78,6 +78,7 @@ int screen_status=MAIN;
 int maxDNSNameCount=20;
 int DNSPage=0;
 char *defaultGateway=NULL;
+int wait=0;
 
 int main(int argc, char **argv)
 {
@@ -100,7 +101,8 @@ int main(int argc, char **argv)
 	} else {
 		/*
 		Parse all parameters*/
-		for (int i=0; i < argc; i++)
+		int i=0;
+		for (i=0; i < argc; i++)
 		{
 			if (strcmp("-i", argv[i]) == 0)
 			{
@@ -262,6 +264,7 @@ bool DNSDuplicateCheck(struct Users_info* user, unsigned char* DNSName)
 
 void Add(int id,u_char* macaddress,u_char* userIP,unsigned char* pload,int bytes,bool hasDNS)
 {
+	pthread_mutex_lock(&mutex); //mutex lock
 	#if 1
 	if (users->head == NULL)
 	{
@@ -345,6 +348,8 @@ void Add(int id,u_char* macaddress,u_char* userIP,unsigned char* pload,int bytes
 
 	topUserCount++;
 	#endif
+	pthread_cond_signal(&condition);
+	pthread_mutex_unlock(&mutex);
 }
 
 int init_pcap(char* eth)
