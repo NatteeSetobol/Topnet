@@ -1,5 +1,5 @@
 # Topnet
-Topnet is a terminal based application which will let you view how much banwidth a device on a network is using.
+Topnet is a terminal based application which will let you monitor how much banwidth a device on a network is using.
 
 
 ![alt tag](http://i.imgur.com/LCqKqGv.png)
@@ -14,4 +14,4 @@ Topnet is a terminal based application which will let you view how much banwidth
 
 compile by running make
 
-NOTE: you might need to do an arpspoof inorder for this to work.
+**NOTE: you might need to do an arpspoof inorder for this to work.**
