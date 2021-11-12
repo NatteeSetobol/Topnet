@@ -6,11 +6,11 @@ Topnet is a terminal based application which will let you view how much banwidth
 
 <dl>
   <dt>To compile this you need the following libraries</dt>
-  <dd>- pcap / pcap-dev</dd>
-  <dd>- ncurses-dev</dd>
-  <dd>- lpthread</dd>
-  <dd>-lnet (linux)</dd>
- </dl>
+  <dd> - pcap / pcap-dev</dd>
+  <dd> - ncurses-dev</dd>
+  <dd> - lpthread</dd>
+  <dd> - lnet (linux)</dd>
+</dl>
 
 compile by running make
 
