@@ -1,26 +1,17 @@
 # Topnet
-View the total bandwidth usage for each IP on a network.
+Topnet is a terminal based application which will let you view how much banwidth a device on a network is using.
+
 
 ![alt tag](http://i.imgur.com/LCqKqGv.png)
 
-
-To compile this you need the following libraries
-
-
--pcap / -pcap-dev
-
-
--ncurses-dev
-
-
--lpthread
-
-
--lnet (linux)
-
+<dl>
+  <dt>To compile this you need the following libraries</dt>
+  <dd>- pcap / pcap-dev</dd>
+  <dd>- ncurses-dev</dd>
+  <dd>- lpthread</dd>
+  <dd>-lnet (linux)</dd>
+ </dl>
 
 compile by running make
-
-
 
 NOTE: you might need to do an arpspoof inorder for this to work.
