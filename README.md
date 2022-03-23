@@ -1,6 +1,5 @@
 # Topnet
-Topnet is a terminal based application which will let you monitor how much banwidth a device on a network is using.
-
+Topnet is a Linux application that will let you monitor how much bandwidth each device on a network is using.
 
 ![alt tag](http://i.imgur.com/LCqKqGv.png)
 
