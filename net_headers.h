@@ -101,7 +101,5 @@ struct __attribute__((__packed__)) sniff_tcp {
         u_short th_urp;                 /* urgent pointer */
 };
 
-
-
 #endif
 

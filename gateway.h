@@ -13,19 +13,7 @@ void HandleError(char* error);
 void CleanUp();
 unsigned char ToHex(char asciiHex);
 unsigned char Combine(unsigned char firstByte,unsigned char secondByte);
-/*
-int main()
-{
-	unsigned char defaultGateway[255];
-	char defaultGateDevice[255];
 
-	GetDefaultGateway(&defaultGateway,&defaultGateDevice);
-
-	printf("the default gateway is: %s and device is %s\n", defaultGateway, defaultGateDevice);
-
-	return 0;
-}
-*/
 bool  GetDefaultGateway(char* DefaultGateway, char* GatewayDevice)
 {
 	FILE* routeFile=NULL;
@@ -100,14 +88,14 @@ bool  GetDefaultGateway(char* DefaultGateway, char* GatewayDevice)
 					}
 				}
 
-                        	//skip the spaces, and tabs
-                        	for (i=i; i < lineCount; i++)
-                        	{
-                                	if (lineFromFile[i] > 34)
-                                	{
-                                        	break;
-                                	}
-                        	}
+				//skip the spaces, and tabs
+				for (i=i; i < lineCount; i++)
+				{
+					if (lineFromFile[i] > 34)
+					{
+						break;
+					}
+				}
 
 		
 				//Get The Gateway
@@ -172,7 +160,6 @@ void HandleError(char* error)
 {
 	printf("Error: %s", error);
 	CleanUp();
-	//exit(0);
 }
 
 unsigned char Combine(unsigned char firstByte,unsigned char secondByte)
@@ -188,86 +175,86 @@ unsigned char ToHex(char asciiHex)
 	switch(asciiHex)
 	{
 		case '0':
-		{
-			return 0x00;
-			break;
-		}
-                case '1':
-                {
-                        return 0x01;
-                        break;
-                }
-                case '2':
-                {
-                        return 0x02;
-                        break;
-                }
-                case '3':
-                {
-                        return 0x03;
-                        break;
-                }
-                case '4':
-                {
-                        return 0x04;
-                        break;
-                }
-                case '5':
-                {
-                        return 0x05;
-                        break;
-                }
-                case '6':
-                {
-                        return 0x06;
-                        break;
-                }
-                case '7':
-                {
-                        return 0x07;
-                        break;
-                }
-                case '8':
-                {
-                        return 0x08;
-                        break;
-                }
-                case '9':
-                {
-                        return 0x09;
-                        break;
-                }
-                case 'A':
-                {
-                        return 0x0A;
-                        break;
-                }
-                case 'B':
-                {
-                        return 0x0B;
-                        break;
-                }
-                case 'C':
-                {
-                        return 0x0C;
-                        break;
-                }
+			{
+				return 0x00;
+				break;
+			}
+		case '1':
+			{
+				return 0x01;
+				break;
+			}
+		case '2':
+			{
+				return 0x02;
+				break;
+			}
+		case '3':
+			{
+				return 0x03;
+				break;
+			}
+		case '4':
+			{
+				return 0x04;
+				break;
+			}
+		case '5':
+			{
+				return 0x05;
+				break;
+			}
+		case '6':
+			{
+				return 0x06;
+				break;
+			}
+		case '7':
+			{
+				return 0x07;
+				break;
+			}
+		case '8':
+			{
+				return 0x08;
+				break;
+			}
+		case '9':
+			{
+				return 0x09;
+				break;
+			}
+		case 'A':
+			{
+				return 0x0A;
+				break;
+			}
+		case 'B':
+			{
+				return 0x0B;
+				break;
+			}
+		case 'C':
+			{
+				return 0x0C;
+				break;
+			}
 
-                case 'D':
-                {
-                        return 0x0D;
-                        break;
-                }
-                case 'E':
-                {
-                        return 0x0E;
-                        break;
-                }
-                case 'F':
-                {
-                        return 0x0F;
-                        break;
-                }
+		case 'D':
+			{
+				return 0x0D;
+				break;
+			}
+		case 'E':
+			{
+				return 0x0E;
+				break;
+			}
+		case 'F':
+			{
+				return 0x0F;
+				break;
+			}
 
 	}
 }

@@ -18,7 +18,6 @@ RM = rm -f
 
 all: all-before topnet all-after
 
-
 clean: clean-custom
 	${RM} $(OBJ) $(BIN)
 

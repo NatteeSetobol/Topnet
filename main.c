@@ -280,32 +280,6 @@ void Add(int id,u_char* macaddress,u_char* userIP,unsigned char* pload,int bytes
 		users->head->dnsInfo = (struct lldns_info*) malloc(sizeof(struct lldns_info));
 		users->head->dnsInfo->head = NULL;
 		users->head->dnsInfo->current = NULL;
-/*
-		int i=0;
-		
-		for (i=0;i<ETHER_ADDR_LEN;i++)
-		{
-			users->head->macaddress[i] = '\0';
-		}
-
-		int j=0;
-		
-		for (j=0;j < 255;j++)
-		{
-			users->head->userip[j] = '\0';
-		}
-
-		if (strlen(macaddress) < 100)
-		{
-			strcpy(users->head->macaddress,macaddress);
-		}
-
-		if (strlen(userIP) < 200)
-		{
-			strcpy(users->head->userip,userIP);
-		}
-		*/
-		//strcpy(users->head->macaddress,macaddress);
 		strcpy(users->head->userip,userIP);
 		users->current = users->head;
 
@@ -320,28 +294,6 @@ void Add(int id,u_char* macaddress,u_char* userIP,unsigned char* pload,int bytes
 		newUsers->dnsInfo = (struct lldns_info*) malloc(sizeof(struct lldns_info));
 		newUsers->dnsInfo->head = NULL;
 		newUsers->dnsInfo->current = NULL;
-		/*
-		int i=0;
-		for (i=0;i<ETHER_ADDR_LEN;i++)
-		{
-			newUsers->macaddress[i] = '\0';
-		}
-
-		int j=0;
-		for (j=0;j < 255;j++)
-		{
-			newUsers->userip[j] = '\0';
-		}
-
-		ASSERT(strlen(macaddress) > 100,"Error Mac Address is too long");
-		strcpy(newUsers->macaddress,macaddress);
-
-
-		ASSERT(strlen(userIP) > 200,"Error user IP is too long");
-		strcpy(newUsers->userip, userIP);
-		*/
-
-		//strcpy(newUsers->macaddress,macaddress);
 		strcpy(newUsers->userip, userIP);
 		users->current->next = newUsers;
 		users->current = users->current->next;
@@ -507,12 +459,6 @@ void got_packet(struct pcap_pkthdr *header, u_char *packet)
 							}
 							userinformation->bytes += size_payload;
 
-							#if 0
-							if (ntohs(tcp->th_sport) == 53 || ntohs(tcp->th_dport) == 53)
-							{
-								GetDNS(payload,userinformation);
-							}
-							#endif
 
 							return ;
 						}
@@ -622,7 +568,6 @@ void write_to_screen()
 				mvprintw(0,45,"Recieved");
 				mvprintw(0,60,"ID");
 
-				//sortTopUsers(); 
 				if (hasTopFive == true)
 				{
 					int i=0;
@@ -631,8 +576,8 @@ void write_to_screen()
 						struct Users_info* user = (struct Users_info*) topUsers[i];
 
 						int macAddressX = 20;
-#if 1
 						int j=0;
+
 						for (j=0;j < MAC_ADDRESS_LEN;j++)
 						{
 							mvprintw(y,macAddressX,"%x", user->macaddress[j]);
@@ -642,7 +587,7 @@ void write_to_screen()
 							}
 							macAddressX +=3;
 						}
-#endif
+
 						mvprintw(y,1,"%s", user->userip);
 						if (user->bytes  < 1048576)
 						{
@@ -668,7 +613,7 @@ void write_to_screen()
 					{
 						int macAddressX = 20;
 						int j=0;
-#if 1
+
 						for (j=0;j < MAC_ADDRESS_LEN;j++)
 						{
 							mvprintw(y,macAddressX,"%x", current_User->macaddress[j]);
@@ -678,7 +623,6 @@ void write_to_screen()
 							}
 							macAddressX +=3;
 						}
-#endif
 						mvprintw(y,1,"%s", current_User->userip);
 						if (current_User->bytes  < 1048576)
 						{
@@ -806,17 +750,11 @@ void write_to_screen()
 			if (key == 'n')
 			{
 				/* NOTE: This need fixin'*/
-				//if (DNSPage > userInfo->dnsInfo->total )
-				//{
-				//if (DNSPage < maxDNSNameCount)
-				//{
-					clear();
-					refresh();
-					key = '\0';
+				clear();
+				refresh();
+				key = '\0';
 
-					DNSPage+=maxDNSNameCount;
-				//}
-				//}
+				DNSPage+=maxDNSNameCount;
 			}
 			if (key == 'p')
 			{

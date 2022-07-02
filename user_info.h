@@ -1,7 +1,6 @@
 #ifndef USER_INFO_H
 #define USER_INFO_H
 
-
 struct dns_info
 {
 	char* name;

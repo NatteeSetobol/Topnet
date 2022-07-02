@@ -9,4 +9,5 @@ struct Users
 	struct Users_info* current;
 };
 
+
 #endif
