@@ -2,7 +2,6 @@
 #ifdef malloc
 #undef malloc
 #undef free
-//#undef realloc
 #endif
 
 #ifndef bool 
@@ -11,8 +10,6 @@
 #define false 0
 #endif
 
-//#include <windows.h>
-//#include <winsock.h>
 #include <stdio.h>
 
 struct minfo
