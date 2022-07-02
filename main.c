@@ -60,6 +60,8 @@ const int MAC_ADDRESS_LEN=6;
 int* topUsers[15];
 int topUserCount=0;
 pthread_t packet_capture={0}; 
+pthread_mutex_t mutex={};
+pthread_cond_t condition= {};
 int quit = 0;
 struct in_addr gateway={0};
 int newID=0;
