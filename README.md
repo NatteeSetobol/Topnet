@@ -5,7 +5,7 @@ Topnet is a Linux application that will let you monitor how much bandwidth each 
 
 <dl>
   <dt>To compile this you need the following libraries</dt>
-  <dd> - pcap / pcap-dev</dd>
+  <dd> - libpcap / libpcap-dev</dd>
   <dd> - ncurses-dev</dd>
   <dd> - lpthread</dd>
   <dd> - lnet (linux)</dd>
