@@ -1,5 +1,5 @@
 # Topnet
-Topnet is a Linux application that will let you monitor how much bandwidth each device on a network is using.
+Topnet is a powerful Linux application designed to help users monitor and manage their network bandwidth usage by providing real-time insights into the data consumption of every device connected to the network.
 
 ![alt tag](http://i.imgur.com/LCqKqGv.png)
 
@@ -13,4 +13,4 @@ Topnet is a Linux application that will let you monitor how much bandwidth each 
 
 compile by running make
 
-**NOTE: you might need to do an arpspoof inorder for this to work.**
+**NOTE: you might need to do an arpspoof in order for this to work.**
